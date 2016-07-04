@@ -1,0 +1,49 @@
+#:kivy 1.9.2
+
+<ScreenEins>:
+	Button:
+		text: "Aktiv Screen 1 => gehe zu Screen 2"
+		on_press: root.manager.current = 'screen2'
+
+<ScreenZwei>:
+	Button:
+	    text: "Aktiv Screen 2 => gehe zu Screen 3"
+		on_press: root.manager.current = 'screen3'
+<ScreenDrei>:
+	Button:
+		text: "Aktiv Screen 3=> gehe zu Screen 4"
+		on_press: root.manager.current = 'screen4'
+<ScreenVier>:
+	Button:
+		text: "Aktiv Screen 3 => gehe zu Screen 1"
+		on_press: root.manager.current = 'screen1'
+
+<Manager>:
+	id: screen_manager
+	
+	screen_eins: screen_eins
+	screen_zwei: screen_zwei
+	screen_drei: screen_drei
+	screen_vier: screen_vier
+	
+	ScreenEins:
+		id: screen_eins
+		name: 'screen1'
+		manager: screen_manager
+		
+	ScreenZwei:
+		id: screen_zwei
+		name: 'screen2'
+		manager: screen_manager
+		
+	ScreenDrei:
+		id: screen_drei
+		name: 'screen3'
+		manager: screen_manager
+		
+	ScreenVier:
+		id: screen_vier
+		name: 'screen4'
+		manager: screen_manager
+	
+	
